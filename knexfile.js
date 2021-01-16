@@ -1,8 +1,7 @@
 // Update with your config settings.
 require("dotenv/config");
-const config = require("./config.json");
 
-const databaseConfig = process.env.DATABASE_URL || config;
+const databaseConfig = process.env.DATABASE_URL || require("./config.json");
 
 module.exports = {
 
