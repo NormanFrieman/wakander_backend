@@ -5,7 +5,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: require("./config.json"),
+    connection: process.env.DATABASE_URL || require("./config.json"),
     migrations: {
       directory: __dirname + '/src/Database/migrations'
     },
