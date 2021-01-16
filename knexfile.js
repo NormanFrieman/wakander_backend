@@ -9,9 +9,6 @@ module.exports = {
     migrations: {
       directory: __dirname + '/src/Database/migrations'
     },
-    seeds: {
-      directory: __dirname + './src/Database/seeds'
-    },
     useNullAsDefault: true,
   },
 
@@ -20,9 +17,6 @@ module.exports = {
     connection: process.env.DATABASE_URL || require("./config.json"),
     migrations: {
       directory: __dirname + '/src/Database/migrations'
-    },
-    seeds: {
-      directory: __dirname + './src/Database/seeds'
     },
     useNullAsDefault: true,
   }
