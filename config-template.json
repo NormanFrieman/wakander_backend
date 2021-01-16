@@ -1,0 +1,7 @@
+{
+    "database": "<<DATABASE HERE>>",
+    "user": "<<USER HERE>>",
+    "password": "<<PASSWORD HERE>>",
+    "host": "<<HOST HERE>>",
+    "port": "<<PORT HERE>>"
+}
