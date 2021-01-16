@@ -1,13 +1,11 @@
 // Update with your config settings.
 require("dotenv/config");
 
-const databaseConfig = process.env.DATABASE_URL || require("./config.json");
-
 module.exports = {
 
   development: {
     client: 'pg',
-    connection: databaseConfig,
+    connection: process.env.DATABASE_URL || require("./config.json"),
     migrations: {
       directory: __dirname + '/src/Database/migrations'
     },
@@ -19,7 +17,7 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: databaseConfig,
+    connection: process.env.DATABASE_URL || require("./config.json"),
     migrations: {
       directory: __dirname + '/src/Database/migrations'
     },
