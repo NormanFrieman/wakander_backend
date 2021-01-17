@@ -56,6 +56,14 @@ Exclusive routes are:
 * Add / configure an article in the user's course list
     - [https://wakanderbackend.herokuapp.com/setupArticle]
 
+> To find out what needs to be sent in the body of the requests listed above, see the README in the Controllers folder.
+
+* Match between user / vacancy
+    - [https://wakanderbackend.herokuapp.com/match/:email/:vancacy]
+
+> To request the match between user and vacancy, in place of ":email" put the user's email and in place of ":vancacy" put the name of the vacancy
+
+
 # License
 
 [MIT](http://opensource.org/licenses/MIT)
