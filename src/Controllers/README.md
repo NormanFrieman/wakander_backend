@@ -180,7 +180,7 @@ The request body must have:
 ### 4) List [GET]
 
 - [GET][https://wakanderbackend.herokuapp.com/list/:def]
-The list route is used by all entities.
+- The list route is used by all entities.
 
 #### - Articles
 
