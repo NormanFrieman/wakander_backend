@@ -21,19 +21,19 @@ The routes were separated into: generic and exclusive. Generics, as the name sug
 Generic routes are:
 
 * Create new data to be saved in the database
-[https://wakanderbackend.herokuapp.com/create/:def]
+    - [https://wakanderbackend.herokuapp.com/create/:def]
 
 * Log in
-[https://wakanderbackend.herokuapp.com/login/:def]
+    - [https://wakanderbackend.herokuapp.com/login/:def]
 
 * Delete data from the database
-[https://wakanderbackend.herokuapp.com/delete/:def]
+    - [https://wakanderbackend.herokuapp.com/delete/:def]
 
 * List all data in a table
-[https://wakanderbackend.herokuapp.com/list/:def]
+    - [https://wakanderbackend.herokuapp.com/list/:def]
 
 * List data specific to a table
-[https://wakanderbackend.herokuapp.com/bylist/:def/:id/:search]
+    - [https://wakanderbackend.herokuapp.com/bylist/:def/:id/:search]
 
 The meaning of the variables passed by the params can be seen below
 
@@ -48,13 +48,13 @@ search    | Term to be searched for in the database
 Exclusive routes are:
 
 * Add user rating points
-[https://wakanderbackend.herokuapp.com/addRating]
+    - [https://wakanderbackend.herokuapp.com/addRating]
 
 * Add / configure a course in the user's course list
-[https://wakanderbackend.herokuapp.com/setupCourse]
+    - [https://wakanderbackend.herokuapp.com/setupCourse]
 
 * Add / configure an article in the user's course list
-[https://wakanderbackend.herokuapp.com/setupArticle]
+    - [https://wakanderbackend.herokuapp.com/setupArticle]
 
 # License
 
