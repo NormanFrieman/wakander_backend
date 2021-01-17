@@ -222,42 +222,80 @@ The URL must have:
 Configuring the lists of Articles, Courses, Vacancies and Trails present in the table "Users".
 The first parameters must be the user's email and password, respectively.
 
-### Articles
+### Match
+- [GET][https://wakanderbackend.herokuapp.com/match/:email/:vancacy]
+- To check the match between a user and a vacancy:
+```
+https://wakanderbackend.herokuapp.com/match/<<USER E-MAIL>>/<<VACANCY NAME>>
+```
 
-To add a new article to the user's list, send a JSON as follows:
+### Add rating points
+- [PUT][https://wakanderbackend.herokuapp.com/addRating]
+- To add points to the user account, send a JSON as follows:
 ```
 {
-    "name": "<<ARTICLE NAME>>,
-    "status": "<<incomplete or complete>>"
+    "email": "<<USER E-MAIL>>,
+    "password": "<<PASSWORD>>",
+    "addRating": <<QUANTITY OF POINTS TO BE ADDED>>
+}
+```
+
+### Articles
+
+- [PUT][https://wakanderbackend.herokuapp.com/setupArticle]
+- To add a new article to the user's list, send a JSON as follows:
+```
+{
+    "email": "<<USER E-MAIL>>,
+    "password": "<<PASSWORD>>",
+    "article": {
+        "name": "<<ARTICLE NAME>>,
+        "status": "<<incomplete or complete>>"
+    }
 }
 ```
 
 ### Courses
 
-To add a new course to the user's list, send a JSON as follows:
+- [PUT][https://wakanderbackend.herokuapp.com/setupCourse]
+- To add a new course to the user's list, send a JSON as follows:
 ```
 {
-    "name": "<<COURSE NAME>>,
-    "status": "<<incomplete or complete>>"
+    "email": "<<USER E-MAIL>>,
+    "password": "<<PASSWORD>>",
+    "course": {
+        "name": "<<COURSE NAME>>,
+        "status": "<<incomplete or complete>>"
+    }
 }
 ```
 
 ### Vacancies
 
-To add a new vacancy to the user's list, send a JSON as follows:
+- [PUT][https://wakanderbackend.herokuapp.com/setupVacancy]
+- To add a new vacancy to the user's list, send a JSON as follows:
 ```
 {
-    "name": "<<VACANCY NAME>>,
-    "status": "<<submitted or accepted>>"
+    "email": "<<USER E-MAIL>>,
+    "password": "<<PASSWORD>>",
+    "vacancy": {
+        "name": "<<VACANCY NAME>>,
+        "status": "<<submitted or accepted>>"
+    }
 }
 ```
 
 ### Trails
 
-To add a new trail to the user's list, send a JSON as follows:
+- [PUT][https://wakanderbackend.herokuapp.com/setupTrail]
+- To add a new trail to the user's list, send a JSON as follows:
 ```
 {
-    "name": "<<TRAIL NAME>>,
-    "status": "<<incomplete or complete>>"
+    "email": "<<USER E-MAIL>>,
+    "password": "<<PASSWORD>>",
+    "trail": {
+        "name": "<<TRAIL NAME>>,
+        "status": "<<incomplete or complete>>"
+    }
 }
 ```

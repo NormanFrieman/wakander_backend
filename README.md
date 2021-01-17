@@ -55,8 +55,14 @@ Exclusive routes are:
 * Add / configure a course in the user's course list
     - [https://wakanderbackend.herokuapp.com/setupCourse]
 
-* Add / configure an article in the user's course list
+* Add / configure an article in the user's articles list
     - [https://wakanderbackend.herokuapp.com/setupArticle]
+
+* Add / configure an vacancy in the user's vancacies list
+    - [https://wakanderbackend.herokuapp.com/setupVacancy]
+
+* Add / configure an trail in the user's trails list
+    - [https://wakanderbackend.herokuapp.com/setupTrail]
 
 > To find out what needs to be sent in the body of the requests listed above, see the README in the Controllers folder.
 
