@@ -4,10 +4,8 @@ Defining the id that should be sent on the route to list specific data.
 
 ## Users
 
-* 0: Returns users with the same name as the one passed in the search parameter.
-    * The "search" parameter must have only one string equivalent to the name to be searched in the database.
-* 1: Returns a list of users with a rating equal to or higher than the past.
-    * The "search" parameter must be a number equivalent to the rating to be taken into account.
+* 0: Returns the user's name and rating with the same email that was passed in the search parameter.
+    * The "search" parameter must have only one string equivalent to the email to be searched in the database.
 
 ## Articles
 

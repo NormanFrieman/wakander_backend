@@ -118,12 +118,28 @@ module.exports = {
     /**
      * List users in the database 
      */
-    // 0 -> WHERE 'NAME'
-    // 1 -> WHERE 'RATING'
+    // 0 -> WHERE 'E-MAIL'
     async ListBy(info){
-        const results = await connection("users").select("*");
+        if(info.id > 0)
+            return {};
 
-        return {results};
+        const props = [
+            {
+                id: 0,
+                name: "name",
+                method: async () => {
+                    const user = await connection("users").where({email: `${info.search}`}).select("*");
+                    return {
+                        name: user[0].name,
+                        rating: user[0].rating
+                    }
+                }
+            }
+        ]
+        
+        const results = await props[info.id].method();
+
+        return results;
     },
 
 
