@@ -35,7 +35,7 @@ module.exports = {
 
         return {
             status: 200,
-            msg: "Article added to the database"
+            msg: "Trail added to the database"
         };
     },
 
