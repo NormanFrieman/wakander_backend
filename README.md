@@ -12,6 +12,50 @@ To get started with developing on backend, install all Node-related dependencies
 
 For developing, use `npm test` to start.
 
+## Routes
+
+The routes were separated into: generic and exclusive. Generics, as the name suggests, can be used by all entities. Exclusives are unique routes to serve a specific purpose of an entity.
+
+### 1) Generic routes
+
+Generic routes are:
+
+* Create new data to be saved in the database
+[https://wakanderbackend.herokuapp.com/create/:def]
+
+* Log in
+[https://wakanderbackend.herokuapp.com/login/:def]
+
+* Delete data from the database
+[https://wakanderbackend.herokuapp.com/delete/:def]
+
+* List all data in a table
+[https://wakanderbackend.herokuapp.com/list/:def]
+
+* List data specific to a table
+[https://wakanderbackend.herokuapp.com/bylist/:def/:id/:search]
+
+The meaning of the variables passed by the params can be seen below
+
+Variable  | Meaning
+--------- | ------
+def       | Can be "users", "companies", "courses", "articles" and "vacancies"
+id        | Used to define the type of function to be used to return a specific list of items
+search    | Term to be searched for in the database
+
+### 2) Exclusive routes
+
+Exclusive routes are:
+
+* Add user rating points
+[https://wakanderbackend.herokuapp.com/addRating]
+
+* Add / configure a course in the user's course list
+[https://wakanderbackend.herokuapp.com/setupCourse]
+
+* Add / configure an article in the user's course list
+[https://wakanderbackend.herokuapp.com/setupArticle]
+
 # License
 
 [MIT](http://opensource.org/licenses/MIT)
