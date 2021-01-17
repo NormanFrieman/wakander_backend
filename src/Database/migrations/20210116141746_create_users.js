@@ -10,6 +10,7 @@ exports.up = function(knex) {
         table.specificType("courses", "JSON[]");
         table.specificType("articles", "JSON[]");
         table.specificType("vacancies", "JSON[]");
+        table.specificType("trails", "JSON[]");
     })
 };
 

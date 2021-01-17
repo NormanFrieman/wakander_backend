@@ -23,6 +23,7 @@ const AddRating = require("./Controllers/AddRating");
 const SetupCourse = require("./Controllers/SetupCourse");
 const SetupArticle = require("./Controllers/SetupArticle");
 const SetupVacancy = require("./Controllers/SetupVacancy");
+const SetupTrail = require("./Controllers/SetupTrail");
 
 
 
@@ -46,6 +47,7 @@ routes.put("/addRating", AddRating);
 routes.put("/setupCourse", SetupCourse);
 routes.put("/setupArticle", SetupArticle);
 routes.put("/setupVacancy", SetupVacancy);
+routes.put("/setupTrail", SetupTrail);
 
 
 

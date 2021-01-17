@@ -39,7 +39,7 @@ The meaning of the variables passed by the params can be seen below.
 
 Variable  | Meaning
 --------- | ------
-def       | Can be "users", "companies", "courses", "articles" and "vacancies"
+def       | Can be "users", "companies", "courses", "articles", "vacancies" and "trails"
 id        | Used to define the type of function to be used to return a specific list of items
 search    | Term to be searched for in the database
 

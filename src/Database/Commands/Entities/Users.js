@@ -47,7 +47,8 @@ module.exports = {
             rating: 0,
             courses: [],
             articles: [],
-            vacancies: []
+            vacancies: [],
+            trails: []
         });
 
         return {
@@ -328,7 +329,51 @@ module.exports = {
 
         return {
             status: 200,
-            msg: "Article successfully configured on user account"
+            msg: "Vacancy successfully configured on user account"
+        };
+    },
+
+
+
+
+    /**
+     * Sets the trail status for the user
+     */
+    async SetupTrail(info){
+        if(
+            info == undefined ||
+            info.email == undefined ||
+            info.password == undefined ||
+            info.trail == undefined
+        ) return {
+            status: 400,
+            msg: "There is missing data"
+        };
+
+        const results = await connection("users").where({
+            email: `${info.email}`,
+            pass: `${info.password}`
+        }).select("trails");
+
+        if(results.length == 0)
+            return {
+                status: 404,
+                msg: "This user does not exist"
+            };
+        
+        let trails = results[0].trails;
+        trails.push(info.trail);
+
+        await connection("users").where({
+            email: `${info.email}`,
+            pass: `${info.password}`
+        }).update({
+            trails: trails
+        });
+
+        return {
+            status: 200,
+            msg: "Trail successfully configured on user account"
         };
     }
 }

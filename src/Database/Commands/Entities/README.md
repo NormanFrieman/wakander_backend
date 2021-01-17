@@ -38,3 +38,10 @@ Defining the id that should be sent on the route to list specific data.
     * The "search" parameter must contain two strings, the first containing the name of the city, the second containing the name of the state.
 * 3: Returns a list of vacancies with the specified workload.
     * The "search" parameter must be a string containing the workload to be used as a filter.
+
+## Trails
+
+* 0: Returns trails with the same name as the one passed in the search parameter.
+    * The "search" parameter must have only one string equivalent to the name to be searched in the database.
+* 1: Returns a list of trails that have the area of ​​knowledge passed in the search.
+    * The "search" parameter must be a string containing the name of the knowledge area to be used as a filter.

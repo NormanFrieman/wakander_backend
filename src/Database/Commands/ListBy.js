@@ -3,6 +3,7 @@ const Companies = require("./Entities/Companies");
 const Vacancies = require("./Entities/Vacancies");
 const Courses = require("./Entities/Courses");
 const Articles = require("./Entities/Articles");
+const Trails = require("./Entities/Trails");
 
 module.exports = async (database, info) => {
     if(database == "users"){
@@ -15,5 +16,7 @@ module.exports = async (database, info) => {
         return await Courses.ListBy(info);
     }else if(database == "articles"){
         return await Articles.ListBy(info);
+    }else if(database == "trails"){
+        return await Trails.ListBy(info);
     }
 }
