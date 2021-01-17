@@ -8,6 +8,7 @@ exports.up = function(knex) {
         table.string("cell");
         table.integer("rating");
         table.specificType("courses", "JSON[]");
+        table.specificType("articles", "JSON[]");
     })
 };
 

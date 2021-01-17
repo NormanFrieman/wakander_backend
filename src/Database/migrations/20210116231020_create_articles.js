@@ -1,11 +1,9 @@
 exports.up = function(knex) {
-    return knex.schema.createTable("jobVacancies", function(table){
+    return knex.schema.createTable("articles", function(table){
         table.increments().primary();
         table.string("name");
-        table.string("company");
+        table.string("imageUrl");
         table.specificType("knowledge", "TEXT[]");
-        table.string("city");
-        table.string("state");
     })
 };
 

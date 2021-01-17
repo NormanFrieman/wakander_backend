@@ -1,23 +1,21 @@
-const { crossJoin } = require("../../connection");
 const connection = require("../../connection");
 
 module.exports = {
     /**
-     * Insert course in the database 
+     * Insert article in the database 
      */
     async Insert(info){
         if(
             info == undefined ||
             info.name == undefined ||
-            info.knowledge == undefined ||
-            info.duration == undefined ||
-            info.points == undefined
+            info.imageUrl == undefined ||
+            info.knowledge == undefined
         ) return {
             status: 400,
             msg: "There is missing data"
         };
         
-        const results = await connection("courses").where({
+        const results = await connection("articles").where({
             name: `${info.name}`
         }).select("*");
 
@@ -27,16 +25,15 @@ module.exports = {
                 msg: "This name is already being used"
             };
 
-        await connection("courses").insert({
+        await connection("articles").insert({
             name: `${info.name}`,
-            knowledge: info.knowledge,
-            duration: `${info.duration}`,
-            points: info.points
+            imageUrl: `${info.imageUrl}`,
+            knowledge: info.knowledge
         });
 
         return {
             status: 200,
-            msg: "Course added to the database"
+            msg: "Article added to the database"
         };
     },
 
@@ -44,7 +41,7 @@ module.exports = {
 
 
     /**
-     * Delete course in the database 
+     * Delete article in the database 
      */
     async Delete(info){
         if(
@@ -55,7 +52,7 @@ module.exports = {
             msg: "There is missing data"
         };
         
-        const results = await connection("courses").where({
+        const results = await connection("articles").where({
             name: `${info.name}`
         }).select("*");
 
@@ -65,8 +62,7 @@ module.exports = {
                 msg: "Unauthorized deletion"
             };
 
-        await connection("courses")
-            .where({
+        await connection("articles").where({
                 name: `${info.name}`
             })
             .delete();
@@ -74,7 +70,7 @@ module.exports = {
 
         return {
             status: 200,
-            msg: "Deleted database course"
+            msg: "Deleted database article"
         };
     },
 
@@ -82,10 +78,10 @@ module.exports = {
 
 
     /**
-     * List courses in the database 
+     * List articles in the database 
      */
     async List(){
-        const results = await connection("courses").select("*");
+        const results = await connection("articles").select("*");
 
         return {results};
     },
@@ -107,23 +103,23 @@ module.exports = {
                 id: 0,
                 name: "name",
                 method: async () => {
-                    return await connection("courses").where({name: `${info.search}`}).select("*");
+                    return await connection("articles").where({name: `${info.search}`}).select("*");
                 }        
             },
             {
                 id: 1,
                 name: "knowledge",
                 method: async () => {
-                    const courses = await connection("courses").select("*");
+                    const articles = await connection("articles").select("*");
                     let selecteds = [];
                     
-                    console.log(courses);
+                    console.log(articles);
 
-                    courses.map((course) => {
-                        course.knowledge.map((know) => {
+                    articles.map((article) => {
+                        article.knowledge.map((know) => {
                             console.log(know);
                             if(know == info.search){
-                                selecteds.push(course);
+                                selecteds.push(article);
                                 return;
                             }
                         })

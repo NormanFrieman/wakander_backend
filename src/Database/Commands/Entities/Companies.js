@@ -95,6 +95,32 @@ module.exports = {
 
 
     /**
+     * ListBy companies in the database 
+     */
+    // 0 -> WHERE 'NAME'
+    async ListBy(info){
+        if(info.id > 0)
+            return {};
+
+        const props = [
+            {
+                id: 0,
+                name: "name",
+                method: async () => {
+                    return await connection("companies").where({name: `${info.search}`}).select("*");
+                }        
+            }
+        ]
+        
+        const results = await props[info.id].method();
+
+        return {results};
+    },
+
+
+
+
+    /**
      * Check login 
      */
     async Login(info){

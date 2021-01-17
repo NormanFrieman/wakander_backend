@@ -9,7 +9,9 @@ module.exports = {
             info == undefined ||
             info.name == undefined ||
             info.company == undefined ||
-            info.knowledge == undefined
+            info.knowledge == undefined ||
+            info.city == undefined ||
+            info.state == undefined
         ) return {
             status: 400,
             msg: "There is missing data"
@@ -39,7 +41,9 @@ module.exports = {
         await connection("jobVacancies").insert({
             name: `${info.name}`,
             company: `${info.company}`,
-            knowledge: info.knowledge
+            knowledge: info.knowledge,
+            city: `${info.city}`,
+            state: `${info.state}`
         });
 
         return {
@@ -95,6 +99,18 @@ module.exports = {
      * List vacancies in the database 
      */
     async List(){
+        const results = await connection("jobVacancies").select("*");
+
+        return {results};
+    },
+
+
+
+
+    /**
+     * List vacancies in the database 
+     */
+    async ListBy(info){
         const results = await connection("jobVacancies").select("*");
 
         return {results};
