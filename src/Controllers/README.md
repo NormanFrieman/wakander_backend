@@ -15,7 +15,7 @@ As seen before, the generic routes are:
 ### 1) Create [POST]
 
 - [POST][https://wakanderbackend.herokuapp.com/create/:def]
-The creation route is used by all entities, but the request body is different for each entity.
+- The creation route is used by all entities, but the request body is different for each entity.
 
 #### - Articles
 
@@ -94,7 +94,7 @@ The request body must have:
 ### 2) LOGIN [PUT]
 
 - [PUT][https://wakanderbackend.herokuapp.com/login/:def]
-The login route is used by the "users" and "companies" entities, but the request body is different for each entity.
+- The login route is used by the "users" and "companies" entities, but the request body is different for each entity.
 
 #### - Companies
 
@@ -119,7 +119,7 @@ The request body must have:
 ### 3) Delete [PUT]
 
 - [PUT][https://wakanderbackend.herokuapp.com/delete/:def]
-The delete route is used by all entities, but the request body is different for each entity.
+- The delete route is used by all entities, but the request body is different for each entity.
 
 #### - Articles
 
@@ -213,7 +213,7 @@ The URL must have:
 ### 5) ListBy [GET]
 
 - [GET][https://wakanderbackend.herokuapp.com/bylist/:def/:id/:search]
-The documentation regarding the ListBy route is in the README present in the `Database / Commands / Entities` folder.
+- The documentation regarding the ListBy route is in the README present in the `Database / Commands / Entities` folder.
 
 * If it is running on your local machine, replace the URL `https://wakanderbackend.herokuapp.com/` with `http://localhost:PORT_USED/`
 
