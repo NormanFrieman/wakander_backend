@@ -213,7 +213,7 @@ The URL must have:
 
 ### 5) ListBy [GET]
 
-The documentation regarding the ListBy route is in the README present in the `Database / Commands / Entities` folder
+The documentation regarding the ListBy route is in the README present in the `Database / Commands / Entities` folder.
 
 * If it is running on your local machine, replace the URL `https://wakanderbackend.herokuapp.com/` with `http://localhost:PORT_USED/`
 
