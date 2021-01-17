@@ -63,7 +63,7 @@ The request body must have:
 {
 	"name": "<<TRAIL NAME>>",
 	"knowledge": <<KNOWLEDGE AREA NAMES ARRAY>>,
-	"courseOrArticles": "<<ARRAY CONTAINING COURSE OR ARTICLE NAMES>>",
+	"coursesOrArticles": "<<ARRAY CONTAINING COURSE OR ARTICLE NAMES>>",
 	"points": <<POINTS EARNED BY COMPLETING THE TRAIL>>
 }
 ```
