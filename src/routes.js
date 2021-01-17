@@ -22,6 +22,7 @@ const ListBy = require("./Controllers/ListBy");
 const AddRating = require("./Controllers/AddRating");
 const SetupCourse = require("./Controllers/SetupCourse");
 const SetupArticle = require("./Controllers/SetupArticle");
+const SetupVacancy = require("./Controllers/SetupVacancy");
 
 
 
@@ -44,6 +45,7 @@ routes.get("/bylist/:def/:id/:search", ListBy);
 routes.put("/addRating", AddRating);
 routes.put("/setupCourse", SetupCourse);
 routes.put("/setupArticle", SetupArticle);
+routes.put("/setupVacancy", SetupVacancy);
 
 
 

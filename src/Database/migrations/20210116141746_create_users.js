@@ -9,6 +9,7 @@ exports.up = function(knex) {
         table.integer("rating");
         table.specificType("courses", "JSON[]");
         table.specificType("articles", "JSON[]");
+        table.specificType("vacancies", "JSON[]");
     })
 };
 

@@ -6,6 +6,8 @@ exports.up = function(knex) {
         table.specificType("knowledge", "TEXT[]");
         table.string("city");
         table.string("state");
+        table.string("workload");
+        table.string("publicationDate");
     })
 };
 

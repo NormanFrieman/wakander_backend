@@ -3,6 +3,8 @@ exports.up = function(knex) {
         table.increments().primary();
         table.string("name");
         table.string("imageUrl");
+        table.string("author");
+        table.string("year");
         table.specificType("knowledge", "TEXT[]");
     })
 };

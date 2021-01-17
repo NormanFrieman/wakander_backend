@@ -46,7 +46,8 @@ module.exports = {
             cell: info.cell,
             rating: 0,
             courses: [],
-            articles: []
+            articles: [],
+            vacancies: []
         });
 
         return {
@@ -118,7 +119,6 @@ module.exports = {
      */
     // 0 -> WHERE 'NAME'
     // 1 -> WHERE 'RATING'
-    // 2 -> WHERE 'COURSES'
     async ListBy(info){
         const results = await connection("users").select("*");
 
@@ -280,6 +280,50 @@ module.exports = {
             pass: `${info.password}`
         }).update({
             articles: articles
+        });
+
+        return {
+            status: 200,
+            msg: "Article successfully configured on user account"
+        };
+    },
+
+
+
+
+    /**
+     * Sets the vacancy status for the user
+     */
+    async SetupVacancy(info){
+        if(
+            info == undefined ||
+            info.email == undefined ||
+            info.password == undefined ||
+            info.vacancy == undefined
+        ) return {
+            status: 400,
+            msg: "There is missing data"
+        };
+
+        const results = await connection("users").where({
+            email: `${info.email}`,
+            pass: `${info.password}`
+        }).select("vacancies");
+
+        if(results.length == 0)
+            return {
+                status: 404,
+                msg: "This user does not exist"
+            };
+        
+        let vacancies = results[0].vacancies;
+        vacancies.push(info.vacancy);
+
+        await connection("users").where({
+            email: `${info.email}`,
+            pass: `${info.password}`
+        }).update({
+            vacancies: vacancies
         });
 
         return {

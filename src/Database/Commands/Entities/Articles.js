@@ -9,7 +9,9 @@ module.exports = {
             info == undefined ||
             info.name == undefined ||
             info.imageUrl == undefined ||
-            info.knowledge == undefined
+            info.knowledge == undefined ||
+            info.author == undefined ||
+            info.year == undefined
         ) return {
             status: 400,
             msg: "There is missing data"
@@ -28,7 +30,9 @@ module.exports = {
         await connection("articles").insert({
             name: `${info.name}`,
             imageUrl: `${info.imageUrl}`,
-            knowledge: info.knowledge
+            knowledge: info.knowledge,
+            author: `${info.author}`,
+            year: `${info.year}`
         });
 
         return {

@@ -35,7 +35,7 @@ Generic routes are:
 * List data specific to a table
     - [https://wakanderbackend.herokuapp.com/bylist/:def/:id/:search]
 
-The meaning of the variables passed by the params can be seen below
+The meaning of the variables passed by the params can be seen below.
 
 Variable  | Meaning
 --------- | ------

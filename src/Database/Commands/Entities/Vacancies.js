@@ -11,7 +11,8 @@ module.exports = {
             info.company == undefined ||
             info.knowledge == undefined ||
             info.city == undefined ||
-            info.state == undefined
+            info.state == undefined ||
+            info.workload == undefined
         ) return {
             status: 400,
             msg: "There is missing data"
@@ -38,12 +39,16 @@ module.exports = {
                 msg: "This company is not registered in the system"
             }
 
+        const date = new Date();
+
         await connection("jobVacancies").insert({
             name: `${info.name}`,
             company: `${info.company}`,
             knowledge: info.knowledge,
             city: `${info.city}`,
-            state: `${info.state}`
+            state: `${info.state}`,
+            workload: `${info.workload}`,
+            publicationDate: `${date}`
         });
 
         return {
@@ -110,8 +115,68 @@ module.exports = {
     /**
      * List vacancies in the database 
      */
+    // 0 -> company
+    // 1 -> knowledge
+    // 2 -> city / state
+    // 3 -> workload
     async ListBy(info){
-        const results = await connection("jobVacancies").select("*");
+        if(info.id > 1)
+            return {};
+
+        const props = [
+            {
+                id: 0,
+                name: "company",
+                method: async () => {
+                    return await connection("jobVacancies").where({
+                        company: `${info.search}`
+                    }).select("*");
+                }        
+            },
+            {
+                id: 1,
+                name: "knowledge",
+                method: async () => {
+                    const vacancies = await connection("jobVacancies").select("*");
+                    let selecteds = [];
+                    
+                    console.log(vacancies);
+
+                    vacancies.map((vacancy) => {
+                        vacancy.knowledge.map((know) => {
+                            console.log(know);
+                            if(know == info.search){
+                                selecteds.push(course);
+                                return;
+                            }
+                        })
+                    })
+                    
+                    return selecteds;
+                }        
+            },
+            {
+                id: 2,
+                name: "city / state",
+                method: async () => {
+                    return await connection("jobVacancies").where({
+                        city: `${info.search[0]}`,
+                        state: `${info.search[1]}`
+                    }).select("*");
+                } 
+            },
+            {
+                id: 3,
+                name: "workload",
+                method: async () => {
+                    return await connection("jobVacancies").where({
+                        workload: `${info.search}`
+                    }).select("*");
+                } 
+            }
+        ]
+        
+        const results = await props[info.id].method();
 
         return {results};
     }
