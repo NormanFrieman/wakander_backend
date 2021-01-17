@@ -26,7 +26,7 @@ The creation route is used by all entities, but the request body is different fo
 The request body must have:
 ```
 {
-    "name": "<<ARTICLE NAME>>",
+	"name": "<<ARTICLE NAME>>",
 	"imageUrl": "<<URL IMAGE>>",
 	"author": "<<AUTHOR NAME>>",
 	"year": "<<YEAR>>",
@@ -39,7 +39,7 @@ The request body must have:
 The request body must have:
 ```
 {
-    "name": "<<COMPANY NAME>>",
+	"name": "<<COMPANY NAME>>",
 	"password": "<<PASSWORD>>",
 	"cnpj": "<<COMPANY CNPJ>>",
 	"plan": "<<CHOOSED PLAN>>"
@@ -50,7 +50,7 @@ The request body must have:
 The request body must have:
 ```
 {
-    "name": "<<COURSE NAME>>",
+	"name": "<<COURSE NAME>>",
 	"knowledge": <<KNOWLEDGE AREA NAMES ARRAY>>,
 	"duration": "<<COURSE DURATION>>",
 	"points": <<POINTS EARNED BY COMPLETING THE COURSE>>
@@ -61,10 +61,10 @@ The request body must have:
 The request body must have:
 ```
 {
-    "name": "<<TRAIL NAME>>",
-    "knowledge": <<KNOWLEDGE AREA NAMES ARRAY>>,
+	"name": "<<TRAIL NAME>>",
+	"knowledge": <<KNOWLEDGE AREA NAMES ARRAY>>,
 	"courseOrArticles": "<<ARRAY CONTAINING COURSE OR ARTICLE NAMES>>",
-    "points": <<POINTS EARNED BY COMPLETING THE TRAIL>>
+	"points": <<POINTS EARNED BY COMPLETING THE TRAIL>>
 }
 ```
 
@@ -73,7 +73,7 @@ The request body must have:
 The request body must have:
 ```
 {
-    "name": "<<USER NAME>>",
+	"name": "<<USER NAME>>",
 	"password": "<<PASSWORD>>",
 	"cpf": "<<USER CPF>>",
 	"email": "<<USER E-MAIL>>",
@@ -86,7 +86,7 @@ The request body must have:
 The request body must have:
 ```
 {
-    "name": "<<VACANCY NAME>>",
+	"name": "<<VACANCY NAME>>",
 	"company": "<<COMPANY NAME>>",
 	"knowledge": <<KNOWLEDGE AREA NAMES ARRAY>>,
 	"city": "<<VACANCY CITY>>",
@@ -104,7 +104,7 @@ The login route is used by the "users" and "companies" entities, but the request
 The request body must have:
 ```
 {
-    "cnpj": "<<COMPANY CNPJ>>",
+	"cnpj": "<<COMPANY CNPJ>>",
 	"password": "<<PASSWORD>>"
 }
 ```
@@ -128,7 +128,7 @@ The delete route is used by all entities, but the request body is different for 
 The request body must have:
 ```
 {
-    "name": "<<ARTICLE NAME>>"
+	"name": "<<ARTICLE NAME>>"
 }
 ```
 
@@ -137,7 +137,7 @@ The request body must have:
 The request body must have:
 ```
 {
-    "cnpj": "<<COMPANY CNPJ>>",
+	"cnpj": "<<COMPANY CNPJ>>",
 	"password": "<<PASSWORD>>"
 }
 ```
@@ -146,7 +146,7 @@ The request body must have:
 The request body must have:
 ```
 {
-    "name": "<<COURSE NAME>>"
+	"name": "<<COURSE NAME>>"
 }
 ```
 
@@ -154,7 +154,7 @@ The request body must have:
 The request body must have:
 ```
 {
-    "name": "<<TRAIL NAME>>"
+	"name": "<<TRAIL NAME>>"
 }
 ```
 
@@ -174,7 +174,7 @@ The request body must have:
 The request body must have:
 ```
 {
-    "name": "<<VACANCY NAME>>",
+	"name": "<<VACANCY NAME>>",
 	"company": "<<COMPANY NAME>>"
 }
 ```
